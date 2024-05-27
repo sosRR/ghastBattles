@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghast Battles</title>
+    <link rel="stylesheet" href="ghastBattles.css">
+    <link rel="icon" type="image/jpeg" href="www/res/icon/ghast-battles-icon.jpg">
+</head>
+
+<body>
+    <div id="appContainer">
+        <!-- Initial Screen -->
+        <div class="initial-screen">
+            <img src="www/res/screen/eleventy-seven.jpg" alt="Eleventy-Seven Screen">
+        </div>
+
+        <!-- Secondary Screen -->
+        <div class="secondary-screen">
+            <img src="www/res/screen/initialize.jpg" alt="Initialize Screen">
+        </div>
+
+        <!-- Title Screen -->
+        <div class="title-screen">
+            <img src="www/res/screen/titleScreen.jpg" alt="Title Screen">
+            <p class="tap-anywhere-message">Tap anywhere to start</p>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="main-menu">
+            <div id="playerName">Hero</div>
+            <div class="status-bar">
+                <span id="playerLevel">Level 1</span>
+                <span id="playerHealth">HP 100</span>
+                <span id="playerGold">G 0</span>
+            </div>
+            <button onclick="summonMonster()">Summon</button>
+            <button onclick="restPlayer()">Rest</button>
+            <button onclick="learnSkills()">Learn</button>
+            <button onclick="showStats()">Stats</button>
+        </div>
+
+        <!-- Rest Screen -->
+        <div class="rest-screen">
+            <h2>Resting</h2>
+            <p>Healing to full health...</p>
+        </div>
+
+        <!-- Summon Screen -->
+        <div class="summon-screen">
+            <!-- Include content for summoning monsters -->
+            <p>Summon a monster:</p>
+            <button onclick="chooseMonsterFromGallery()">Choose from Gallery</button>
+            <button onclick="useCameraForMonster()">Use Camera</button>
+        </div>
+
+        <!-- Learn Screen -->
+        <div class="learn-screen">
+            <!-- Include content for learning skills -->
+            <p>Learn new skills:</p>
+            <!-- Include options to learn skills -->
+        </div>
+
+        <!-- Stats Screen -->
+        <div class="stats-screen">
+            <!-- Include content for viewing and managing player stats -->
+            <h2>Player Stats</h2>
+            <!-- Display player stats and options to allocate stat points -->
+        </div>
+
+        <!-- Battle Screen -->
+        <div class="battle-screen">
+            <!-- Include content for battle interface and log -->
+            <h2>Battle</h2>
+            <div id="battleLog"></div>
+            <!-- Include buttons for player actions during battle -->
+            <button onclick="performAction('Attack', currentMonster)">Attack</button>
+            <button onclick="performAction('Defend', currentMonster)">Defend</button>
+            <button onclick="castSpell('FireBlast', currentMonster)">FireBlast</button>
+            <!-- Include more buttons for other actions -->
+        </div>
+    </div>
+
+    <div id="loadingAnimationContainer" class="loading-animation-container">
+        <img id="loadingAnimation" src="www/res/loading/loading.gif" alt="Loading Animation">
+    </div>
+
+    <script src="ghastBattles.js"></script>
+</body>
+
+</html>
