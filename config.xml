@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.eleventyseven.ghastbattles" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <!-- App Information -->
+    <name>Ghast Battles</name>
+    <description>An epic battle game with ghastly creatures.</description>
+    <author email="eleventysevenE117S@gmail.com" href="https://github.com">sosthenisRR</author>
+
+    <!-- Platforms -->
+    <platform name="android">
+        <!-- Android Specific Configurations -->
+        <icon density="ldpi" src="www/res/icon/android/ldpi.png" />
+        <icon density="mdpi" src="www/res/icon/android/mdpi.png" />
+        <icon density="hdpi" src="www/res/icon/android/hdpi.png" />
+        <icon density="xhdpi" src="www/res/icon/android/xhdpi.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/xxxhdpi.png" />
+
+        <splash density="ldpi" src="www/res/screen/android/splash-ldpi.png" />
+        <splash density="mdpi" src="www/res/screen/android/splash-mdpi.png" />
+        <splash density="hdpi" src="www/res/screen/android/splash-hdpi.png" />
+        <splash density="xhdpi" src="www/res/screen/android/splash-xhdpi.png" />
+        <splash density="xxhdpi" src="www/res/screen/android/splash-xxhdpi.png" />
+        <splash density="xxxhdpi" src="www/res/screen/android/splash-xxxhdpi.png" />
+
+        <allow-intent href="market:*" />
+        
+        <preference name="android-minSdkVersion" value="21" /> <!-- Minimum Android SDK version -->
+        <preference name="android-targetSdkVersion" value="30" /> <!-- Target Android SDK version -->
+        <preference name="loadUrlTimeoutValue" value="700000" />
+
+    <!-- Other configurations -->
+        <preference name="android-minSdkVersion" value="19" />
+        <!-- Add any other preferences as needed -->
+    </platform>
+
+    <platform name="ios">
+        <!-- iOS Specific Configurations -->
+        <icon src="www/res/icon/ios/icon.png" />
+        <splash src="www/res/screen/ios/splash.png" />
+
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+
+        <preference name="WKWebViewOnly" value="true" />
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    </platform>
+
+    <!-- Preferences -->
+    <preference name="SplashScreen" value="screen" /> <!-- Use 'screen' or 'splash' for custom splash screen -->
+    <preference name="SplashScreenDelay" value="5000" /> <!-- Delay in milliseconds -->
+    <preference name="DisallowOverscroll" value="true" /> <!-- Prevent page overscroll -->
+    <preference name="BackupWebStorage" value="none" /> <!-- Disable web storage backup -->
+    <preference name="Orientation" value="landscape" /> <!-- Default screen orientation -->
+
+    <!-- Plugins -->
+    <plugin name="cordova-plugin-splashscreen" spec="^6.0.0" />
+    <plugin name="cordova-plugin-camera" spec="^5.0.2" />
+    <plugin name="cordova-plugin-file" spec="^6.0.2" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^5.0.0" />
+    <plugin name="cordova-plugin-device" spec="^2.0.3" />
+
+    <!-- Permissions -->
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-feature android:name="android.hardware.camera.autofocus" />
+    </edit-config>
+
+    <!-- Whitelist External URLs -->
+    <allow-navigation href="https://example.com/*" />
+
+    <!-- Content Security Policy (CSP) -->
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <!-- Access Origin -->
+    <access origin="*" /> <!-- Allow access to all domains, adjust as needed -->
+
+    <!-- Security Headers -->
+    <meta-data http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <!-- Preferences for iOS -->
+    <platform name="ios">
+        <preference name="WKWebViewOnly" value="true" />
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    </platform>
+</widget>
